@@ -1,0 +1,26 @@
+<!-- attempt first -->
+<!-- <input type="text" placeholder="Enter your Name" #NamePlease>
+<button type="button" (click)="getName(NamePlease.value)">Enter</button>
+<h2>{{thisName}}</h2> -->
+
+<!-- attempt second -->
+<!-- <input type="text" [(ngModel)]="tempName" placeholder="Enter your Name">
+<button type="button" (click)="submitName()">Enter</button>
+
+<li>{{ thisName }}</li> -->
+<!-- attempt third -->
+<!-- <input type="text" [(ngModel)]="tempName" placeholder="Enter your Name">
+<button type="button" (click)="submitName()">Enter</button>
+
+<h2>Names List:</h2>
+<ul>
+  <li *ngFor="let name of namesList">{{ name }} </li>
+</ul> -->
+
+<input type="text" [(ngModel)]="tempName" placeholder="Enter your Name">
+<button type="button" (click)="submitName()">Enter</button>
+
+<h2>Names List:</h2>
+<ul>
+  <li *ngFor="let name of namesList;  let i = index">{{ name }} <button type="button" (click)="deleteName(i)">Delete</button></li>
+</ul>
