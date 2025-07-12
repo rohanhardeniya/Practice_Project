@@ -1,0 +1,19 @@
+<div class="auth-container">
+  <div class="auth-tabs">
+    <button [class.active]="isLogin" (click)="isLogin = true">Login</button>
+    <button [class.active]="!isLogin" (click)="isLogin = false">Signup</button>
+  </div>
+
+  <form *ngIf="isLogin" (ngSubmit)="onLogin()" #loginForm="ngForm" class="auth-form">
+    <input type="email" name="email" [(ngModel)]="email" placeholder="Email" required />
+    <input type="password" name="password" [(ngModel)]="password" placeholder="Password" required />
+    <button type="submit">Login</button>
+  </form>
+
+  <form *ngIf="!isLogin" (ngSubmit)="onSignup()" #signupForm="ngForm" class="auth-form">
+    <input type="text" name="fullName" [(ngModel)]="fullName" placeholder="Full Name" required />
+    <input type="email" name="signupEmail" [(ngModel)]="signupEmail" placeholder="Email" required />
+    <input type="password" name="signupPassword" [(ngModel)]="signupPassword" placeholder="Password" required />
+    <button type="submit">Signup</button>
+  </form>
+</div>
